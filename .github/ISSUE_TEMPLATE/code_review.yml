@@ -1,0 +1,76 @@
+name: Code Review
+description: A code review conducted with a Technical Leader (TL) or the course instructor.
+title: "Code Review: Lab 5, t-tests, ANOVA and MANOVA in R"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Fill this out with the programmer present. Leave a box unchecked when the work does
+        not meet it. An unchecked box is information, not a punishment.
+  - type: input
+    attributes:
+      label: Reviewer
+      description: The GitHub username of the TL or instructor conducting this review
+      placeholder: your-github-username
+    validations:
+      required: true
+  - type: checkboxes
+    attributes:
+      label: Functional requirements
+      description: Check each of the following satisfied functional requirements for one randomly chosen file in src/
+      options:
+        - label: "Code solves the issue presented"
+        - label: "Code functions, even if not fully solving the issue presented"
+        - label: "Performance of the code is acceptable"
+  - type: checkboxes
+    attributes:
+      label: Code style and legibility
+      description: Check each of the following checkboxes that describe code legibility
+      options:
+        - label: The code contains comments
+        - label: Variable names are accurate and appropriate
+        - label: The code is easy to read
+        - label: The code is formatted correctly
+  - type: markdown
+    attributes:
+      value: |
+        Conduct a short walkthrough with the programmer. Ask the three questions below out loud,
+        with the programmer's `src/analysis.R` open on screen, and check each one the author answers
+        adequately in their own words. Reading a comment aloud does not count as an explanation.
+
+        **Code Question 1 (t-tests, TODO 3 and TODO 5).** Point to the two `t.test()` calls. Why is
+        the first written `exam_score ~ device` and what does each side of the `~` mean? Why does the
+        second one need `paired = TRUE`, and what would be wrong with the answer if it were left out?
+
+        **Code Question 2 (ANOVA and decisions, TODO 6 to TODO 9).** Point to `aov()`, `TukeyHSD()` and
+        the `zone_decision` line. What does the ANOVA test and what does Tukey add after it? How does
+        the code decide "significant" versus "not significant", and what does `zone_p < alpha` mean
+        in plain language?
+
+        **Concept Question (looking before testing).** Pick one plot and its test (for example the
+        study-method boxplot and its ANOVA, or the campus-zone boxplot and its ANOVA). What did the plot
+        lead you to expect, did the p-value agree, and what does a p-value actually tell you (and not
+        tell you) about the groups?
+  - type: checkboxes
+    attributes:
+      label: Code walkthrough
+      description: Check each question the author answered adequately
+      options:
+        - label: "Code Question 1: The author can explain the `outcome ~ group` formula in `t.test()` and why the pre-test/post-test comparison needs `paired = TRUE`"
+        - label: "Code Question 2: The author can explain what `aov()` and `TukeyHSD()` each do and how the code uses the p-value and alpha to make a decision"
+        - label: "Concept Question: The author can connect a plot to its test result and correctly interpret a p-value (including that non-significant does not mean 'no difference')"
+  - type: textarea
+    attributes:
+      label: The Good, The Bad, The Ugly
+      description: Write a short note with at least 3 aspects done well, and 3 aspects on which the code could be improved
+      value: |
+        #### Positives
+        1.
+        2.
+        3.
+        #### Improvements
+        1.
+        2.
+        3.
+    validations:
+      required: true

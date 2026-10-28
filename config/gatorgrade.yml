@@ -1,0 +1,64 @@
+# perform checks on a file
+
+# check the technical writing for various characteristics
+- writing/reflection.md:
+    - description: Ensure that writing/reflection.md file exists.
+      check: ConfirmFileExists
+    - description: Complete all TODOs, remove the TODO markers in writing/reflection.md
+      check: MatchFileFragment
+      options:
+        fragment: TODO
+        count: 0
+        exact: true
+    - description: Delete the 'Add Your Name Here' prompt in writing/reflection.md
+      check: MatchFileFragment
+      options:
+        fragment: "Add Your Name Here"
+        count: 0
+        exact: true
+# check the R code for various characteristics
+- src/analysis.R:
+    - description: Ensure that src/analysis.R file exists.
+      check: ConfirmFileExists
+    - description: Complete all TODOs, remove the TODO markers in src/analysis.R
+      check: MatchFileFragment
+      options:
+        fragment: TODO
+        count: 0
+        exact: true
+    - description: Delete the 'YOUR CODE HERE' placeholders in the src/analysis.R file
+      check: MatchFileFragment
+      options:
+        fragment: "YOUR CODE HERE"
+        count: 0
+        exact: true
+    - description: Delete the 'Add Your Name Here' prompt in the src/analysis.R file
+      check: MatchFileFragment
+      options:
+        fragment: "Add Your Name Here"
+        count: 0
+        exact: true
+    - description: Use the t.test() function at least twice (independent and paired)
+      check: MatchFileFragment
+      options:
+        fragment: "t.test("
+        count: 2
+        exact: false
+    - description: Fit an ANOVA with aov()
+      check: MatchFileFragment
+      options:
+        fragment: "aov("
+        count: 2
+        exact: false
+    - description: Fit a MANOVA with manova()
+      check: MatchFileFragment
+      options:
+        fragment: "manova("
+        count: 1
+        exact: false
+
+# count number of commits in the GitHub repository
+- description: Have at least a specific minimum number of commits (5) in repository
+  check: CountCommits
+  options:
+    count: 5
