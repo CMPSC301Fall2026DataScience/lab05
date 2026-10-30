@@ -4,11 +4,11 @@ __Fall 2026__
 
 Comparing Groups with t-tests, ANOVA and MANOVA in R
 
-**Assigned** : Thursday, 29th October 2026
+**Assigned** : Friday, 30th October 2026
 
-**Due** : Thursday, 5th November 2026
+**Due** : Friday, 6th November 2026
 
-**Lab Expiration Date**: Thursday, 12th November 2026
+**Lab Expiration Date**: Friday, 13th November 2026
 
 Note: This is the last date that you can submit this work for a grade.
 
